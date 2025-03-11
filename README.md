@@ -1,116 +1,110 @@
-# qa-project8-Urban-Routes-es
+# qa-project8-Urban-Routes-es-funcional
 
-# Urban Routes
+## Urban Routes
 
 **Vanessa Pineda Perez - Cohort 21, Sprint 8**
 
-Google Chrome: Navegador web para ejecutar las pruebas.
+Google Chrome: Navegador web necesario para ejecutar las pruebas automatizadas.
 
 ---
 
 ## Descripción del Proyecto
 
-Urban Routes es una aplicación de servicio de taxis en Tripleten que permite a los usuarios pedir un taxi de manera rápida y eficiente.
-Este proyecto se enfoca en implementar y probar varias funcionalidades clave de la aplicación, asegurando que el proceso de pedir un taxi sea fluido y sin problemas.
+Urban Routes es una aplicación de servicio de taxis desarrollada para Tripleten. Permite a los usuarios pedir un taxi de manera eficiente y personalizada. Este proyecto se centra en implementar y probar funcionalidades clave para garantizar una experiencia fluida.
 
 ---
 
-## Tecnologías y Técnicas Utilizadas
+## Tecnologías y Herramientas Utilizadas
 
-- **Python**: Lenguaje de programación utilizado para escribir las pruebas automatizadas.
-- **Selenium**: Herramienta de automatización utilizada para interactuar con la aplicación web y realizar las pruebas.
-- **Unittest**: Framework de pruebas utilizado para estructurar y ejecutar las pruebas automatizadas.
-- **Git**: Sistema de control de versiones utilizado para gestionar el código fuente del proyecto.
+- **Python**: Lenguaje de programación utilizado para las pruebas.
+- **Selenium**: Herramienta de automatización para interactuar con la interfaz web.
+- **Unittest**: Framework para estructurar y ejecutar las pruebas.
+- **Git**: Sistema de control de versiones para administrar el código fuente.
 
 ---
 
 ## Instrucciones para Ejecutar las Pruebas
 
-1. Asegúrate de tener instaladas las siguientes herramientas y bibliotecas:
-    - **Python 3.x**
-    - **Selenium**: Podemos instalarlo con el siguiente comando:
+1. **Instalar dependencias**:
+    - Asegúrate de tener instalado **Python 3.x**.
+    - Instala Selenium ejecutando el siguiente comando en la terminal:
       ```sh
       pip install selenium
       ```
-2. Ejecutar el archivo principal de pruebas automatizadas con el siguiente comando:
-   ```sh
-   pytest ruta/del/proyecto/tests.py
 
-Requisitos del Proyecto
+2. **Ejecutar las pruebas**:
+    - Abre la terminal, navega al directorio raíz del proyecto y ejecuta:
+      ```sh
+      pytest qa-project8-Urban-Routes-es/tests.py
+      ```
 
--Pruebas escritas para todos los escenarios clave.
+---
 
--Código bien formateado y fácil de leer.
+## Requisitos del Proyecto
 
--Uso de al menos 4 tipos de localizadores distintos.
+Para considerar las pruebas exitosas, deben cumplirse los siguientes criterios:
 
-Las pruebas interactúan con las entradas.
+1. **Pruebas Automatizadas**:
+    - Configuración de direcciones.
+    - Selección de tarifas.
+    - Ingreso de información de pago.
+    - Solicitudes adicionales (manta, pañuelos, helados).
+    - Verificación de aparición del modal de búsqueda de taxi.
+2. **Código limpio y bien estructurado**:
+    - Uso de variables y funciones descriptivas.
+    - Funciones deben comenzar con verbos.
+3. **Interacciones clave cubiertas**:
+    - Entradas.
+    - Botones.
+    - Modales dinámicos.
+4. **Uso adecuado de funciones de espera**:
+    - Utilizar WebDriverWait en lugar de pausas estáticas (`time.sleep`).
+5. **Uso de localizadores diversos**:
+    - Deben usarse al menos 4 tipos diferentes de localizadores: `By.ID`, `By.CLASS_NAME`, `By.XPATH`, `By.CSS_SELECTOR`.
 
-Sí, el código interactúa con entradas como las direcciones de origen
-y destino usando set_from y set_to.
+---
 
-Las pruebas interactúan con los botones.
+## Casos de Prueba Automatizados
 
-Tu prueba principal no lo hace aún, pero versiones extendidas de tu código cubren interacciones
-con botones (por ejemplo, seleccionar tarifas o enviar formularios). Agregar pruebas específicas
-para botones garantizará que este criterio esté cubierto.
+Las pruebas automatizadas abarcan los siguientes pasos clave en el proceso de pedir un taxi:
 
-Las funciones de espera se utilizan correctamente.
+1. **Configurar la dirección**:
+    - Establecer la dirección de recogida y destino.
+2. **Seleccionar la tarifa Comfort**:
+    - Elegir la tarifa Comfort para el servicio.
+3. **Rellenar el número de teléfono**:
+    - Ingresar el número de teléfono y el código de confirmación interceptado.
+4. **Agregar una tarjeta de crédito**:
+    - Rellenar los campos de la tarjeta y activar el botón 'link' cambiando el enfoque del campo CVV.
+5. **Escribir un mensaje para el conductor**:
+    - Enviar un mensaje personalizado al conductor.
+6. **Pedir una manta y pañuelos**:
+    - Seleccionar estos elementos adicionales desde los interruptores.
+7. **Pedir 2 helados**:
+    - Simular la adición de dos helados como servicio adicional.
+8. **Verificar la aparición del modal**:
+    - Validar que el modal para buscar un taxi aparezca correctamente.
 
-Sí, se utiliza WebDriverWait en varias partes del código para garantizar que los elementos estén
-disponibles antes de interactuar con ellos.
+---
 
--Interacción con:
+## Ejemplo de Resultado Esperado
 
-    Entradas
-    Botones
-    Modales dinámicos
-    Funciones de espera implementadas correctamente.
-    Variables y funciones con nombres descriptivos.
+- Al ejecutar las pruebas automatizadas, el código debe validar lo siguiente:
+  - Direcciones ingresadas correctamente.
+  - Tarifas seleccionadas.
+  - Información de la tarjeta agregada exitosamente.
+  - Mensaje enviado correctamente.
+  - Elementos adicionales solicitados.
+  - Modal de búsqueda de taxi visible.
 
-Ejemplo: Las funciones deben comenzar con verbos.
-         Evitar abreviaturas inapropiadas.
-         Casos de Prueba Automatizados
+---
 
-✔️ Configurar la dirección ✔️ Seleccionar la tarifa Comfort ✔️ Rellenar el número de
-teléfono ✔️ Agregar una tarjeta de crédito ✔️ Escribir un mensaje para el conductor
-✔️ Pedir una manta y pañuelos ✔️ Pedir 2 helados ✔️ Verificar la aparición del modal
-para buscar un taxi ✔️ Esperar la información del conductor en el modal (opcional)
+## Conclusión
 
-Pre-requisitos
+Este proyecto refuerza la calidad del software automatizando pruebas clave para la aplicación Urban Routes. Gracias a estas pruebas:
+- Se asegura una experiencia de usuario sin errores antes del despliegue.
+- Se identifican áreas de mejora durante el desarrollo.
+- Se implementan prácticas sólidas en automatización de pruebas.
 
-Asegúrate de tener instaladas las siguientes herramientas y bibliotecas:
-Python 3.x
-Selenium: Podemos instalarlo con el siguiente comando: pip install selenium
+El proyecto Urban Routes es una excelente contribución al desarrollo profesional en la industria del software.
 
-Conclusiones
-En conclusión, el proyecto Urban Routes no solo ha cumplido con sus objetivos técnicos,
-sino que también ha proporcionado un valioso aprendizaje en cuanto a la implementación y
-prueba de aplicaciones web. Gracias a las pruebas automatizadas:
-Se ha fortalecido la calidad del software.
-Se han identificado áreas de mejora antes de desplegar la aplicación.
-Este proyecto es un excelente paso hacia el desarrollo profesional
-en la industria de software.
-
-Descripción de las Pruebas Automatizadas para Pedir un Taxi (Sprint 8)
-
-*Configurar la dirección: Establecer la dirección de recogida y destino.
-*Seleccionar la tarifa Comfort: Elegir la tarifa Comfort para el servicio de taxi.
-*Rellenar el número de teléfono: Ingresar el número de teléfono del usuario.
-*Agregar una tarjeta de crédito: Ingresar los detalles de la tarjeta de crédito y
-cambiar el enfoque del campo CVV para activar el botón 'link'.
-*Escribir un mensaje para el conductor: Enviar un mensaje al conductor con instrucciones
-o solicitudes adicionales.
-*Pedir una manta y pañuelos: Solicitar una manta y pañuelos como elementos adicionales.
-*Pedir 2 helados: Pedir dos helados como parte del servicio.
-*Esperar a que aparezca la información del conductor (opcional): Verificar que la
-información del conductor aparezca en el modal de búsqueda de conductor.
-
-Automatización de Pruebas
-Hemos desarrollado un conjunto de pruebas automatizadas utilizando Selenium y Unittest,
-que cubren el proceso completo de pedir un taxi. Estas pruebas aseguran que las
-funcionalidades clave de la aplicación, como:
--Configuración de direcciones.
--Selección de tarifas.
--Ingreso de información de pago.
--Solicitudes adicionales.
